@@ -11,8 +11,8 @@ body {
 }
 
 header {
-  background-color: #333;
-  color: #fff;
+  background-color:rgb(255, 127, 232);
+  color: #efe8e8;
   padding: 20px;
   text-align: center;
 }
@@ -28,7 +28,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #4136c0;
 }
 
 main {
@@ -48,25 +48,25 @@ h3 {
 .cta-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #347db9;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
 }
 
 .cta-button:hover {
-  background-color: #555;
+  background-color: #332c3657;
 }
 
 .program,
 .event {
-  background-color: #f4f4f4;
+  background-color: #d490db;
   padding: 20px;
   margin-bottom: 20px;
 }
 
 footer {
-  background-color: #333;
+  background-color: #a61414;
   color: #fff;
   text-align: center;
   padding: 10px;
