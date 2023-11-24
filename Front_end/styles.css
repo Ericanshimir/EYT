@@ -11,10 +11,11 @@ body {
 }
 
 header {
-  background-color:rgb(255, 127, 232);
-  color: #efe8e8;
+  background-color:rgb(64, 70, 74);
+  color: rgb(246, 248, 246);
   padding: 20px;
   text-align: center;
+ 
 }
 
 nav ul {
@@ -57,16 +58,78 @@ h3 {
 .cta-button:hover {
   background-color: #332c3657;
 }
+.image1{
+  width: 500px; 
+  height: 300px;
+}
 
 .program,
 .event {
-  background-color: #d490db;
+  background-color: #90b3db;
   padding: 20px;
   margin-bottom: 20px;
 }
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+}
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+}
+ /* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0; /* Remove default body margin */
+}
+
+
+.login-form {
+  position: absolute;
+  top: 50px; /* Adjust top position */
+  right: 20px;
+  background-color: #4874a5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+}
+
+/* Rest of the styles remain the same */
+/* ... */
+
+
+
+
 
 footer {
-  background-color: #a61414;
+  background-color: rgb(72, 79, 9);
   color: #fff;
   text-align: center;
   padding: 10px;
