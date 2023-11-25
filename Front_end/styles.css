@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  background-color:rgb(64, 70, 74);
+  background-color:rgb(113, 123, 129);
   color: rgb(246, 248, 246);
   padding: 20px;
   text-align: center;
@@ -49,7 +49,7 @@ h3 {
 .cta-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #347db9;
+  background-color: #bfcad2;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -65,7 +65,7 @@ h3 {
 
 .program,
 .event {
-  background-color: #90b3db;
+  background-color: #bec6d0;
   padding: 20px;
   margin-bottom: 20px;
 }
