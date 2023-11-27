@@ -67,3 +67,13 @@ def counter(request):
 
 def post(request, pk):
     return render(request, 'post.html', {'pk': pk})
+
+
+def dashboard(request):
+    return render(request, 'dashboard.html' )
+
+def training_materials(request):
+    return render(request, 'training_materials.html' )
+
+def contact_form(request):
+    return render(request, 'contact_form.html')
