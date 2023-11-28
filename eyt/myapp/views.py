@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Feature
+from .forms import Video_form
+from .forms import Video
 
 # Create your views here.
 def index(request):
@@ -83,3 +85,14 @@ def home(request):
 
 def room(request):
     return room(request, 'room.html')
+def index(request):
+    if request.method == "POST":
+        all_video=Video.objects.all()
+        form=Video_form(data=request.POST, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("<h1>uploaded successfully")
+    else:
+        form=Video_form()
+    return render(request,'index.html',{"form":form,"all":all_video})
+    

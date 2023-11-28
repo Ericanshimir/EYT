@@ -83,7 +83,9 @@ setInterval(function(){
                 $("#display").append(temp);
             }
         },
-        
+        error: function(response){
+            alert('An error occured')
+        }
     });
 },1000);
 })
