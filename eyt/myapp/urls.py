@@ -10,7 +10,10 @@ urlpatterns = [
     path('post/<str:pk>', views.post, name='post'),
     path('dashboard', views.dashboard, name='dashboard'),
     path('training_materials', views.training_materials, name='training_materials'),
-    path('contact', views.contact, name='contact.html')
+    path('contact', views.contact, name='contact.html'),
+    path('home', views.home, name='home.html'),
+    path('room', views.room, name='room.html')
+
 ]
 
     

@@ -75,5 +75,11 @@ def dashboard(request):
 def training_materials(request):
     return render(request, 'training_materials.html' )
 
-def contact_form(request):
+def contact(request):
     return render(request, 'contact_form.html')
+
+def home(request):
+    return render(request, 'home.html')
+
+def room(request):
+    return room(request, 'room.html')
