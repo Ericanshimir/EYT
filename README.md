@@ -11,7 +11,8 @@ This project is called "empowering youth through technology" and it aims to esta
 Prerequisites
 Python 
 Django 
-Any other dependencies
+
+
 Installation
 Clone the repository:
 
@@ -55,14 +56,3 @@ Copy code
 python manage.py runserver
 Access the application:
 Open a web browser and go to http://127.0.0.1:8000/ to view the site.
-
-Directory Structure
-Explain the structure of your project's main directories and key files.
-
-Contributing
-Specify guidelines for contributing to the project if applicable.
-
-License
-Include the license information for your project.
-
-Replace placeholders like <repository_url>, <project_folder>, and version numbers with actual details relevant to your project. Provide more specific instructions or additional sections as needed for your project's setup and usage.
