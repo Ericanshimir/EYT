@@ -17,8 +17,8 @@ Clone the repository:
 
 bash
 Copy code
-git clone <repository_url>
-cd <project_folder>
+git clone https://github.com/Ericanshimir/EYT.git
+cd eyt
 Install Python and Django:
 
 bash
