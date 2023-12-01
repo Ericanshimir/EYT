@@ -1,5 +1,54 @@
-<!-- Dashboard with navigation links -->
-<h1>Welcome to the Dashboard</h1>
-<a href="{% url 'training_materials' %}">Access Training Materials</a> <br>
-<a href="{% url 'dashboard' %}">Apply for Mentorship</a>
-<!-- Display user progress or recent activities -->
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    
+    .dashboard {
+      max-width: 800px; 
+      margin: 0 auto; 
+      padding: 20px; 
+      font-family: Arial, sans-serif; 
+    }
+
+    
+    .navigation-links a {
+      display: block; 
+      margin-bottom: 10px; 
+      text-decoration: none; 
+      color: #333333; 
+      font-weight: bold; 
+      transition: color 0.3s; 
+    }
+
+    .navigation-links a:hover {
+      color: #007bff; 
+    }
+    .user-progress {
+      margin-top: 20px; 
+      padding: 10px; 
+      background-color: #f7f7f7; 
+      border: 1px solid #ccc; 
+      border-radius: 5px; 
+    }
+  </style>
+</head>
+<body>
+
+<div class="dashboard">
+  <h1>Welcome to the Dashboard</h1>
+  <div class="navigation-links">
+    <a href="{% url 'training_materials' %}">Access Training Materials</a> <br>
+    <a href="{% url 'dashboard' %}">Apply for Mentorship</a> <br>
+    <a href="{% url 'home' %}">Mentorship Interaction</a>
+  </div>
+  <div class="user-progress">
+    <!-- Display user progress or recent activities -->
+    <!-- Add content related to user progress here -->
+    <p>User Progress:</p>
+    <p>Recent activities:</p>
+    <!-- Example content for user progress section -->
+  </div>
+</div>
+
+</body>
+</html>

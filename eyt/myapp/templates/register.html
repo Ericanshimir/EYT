@@ -1,21 +1,69 @@
-<h1>Sign Up below</h1>
-
-<style>
- h5 {color: red};
-</style>
-
-{% for message in messages %}
-<h5>{{message}}</h5>
-{% endfor %}
-<form method="POST" action="register">
-  {% csrf_token %}
-  <p>Username:</p> 
-  <input type="text" name="username" />
-  <p>Email:</p>
-  <input type="email" name="email" />
-  <p>Password:</p>
-  <input type="password" name="password" />
-  <p> Repeat Password: </p>
-  <input type="passowrd" name="password2" /><br>
-  <input type="submit" />
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <style>
+    /* Embedded CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    h5 {
+      color: red;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #4c51af;
+      color: white;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #4598a0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sign Up below</h1>
+  {% for message in messages %}
+    <h5>{{ message }}</h5>
+  {% endfor %}
+  <form method="POST" action="register">
+    {% csrf_token %}
+    <p>Username:</p>
+    <input type="text" name="username" required />
+    <p>Email:</p>
+    <input type="email" name="email" required />
+    <p>Password:</p>
+    <input type="password" name="password" required />
+    <p>Repeat Password:</p>
+    <input type="password" name="password2" required /><br>
+    <input type="submit" value="Sign Up" />
+  </form>
+</body>
+</html>

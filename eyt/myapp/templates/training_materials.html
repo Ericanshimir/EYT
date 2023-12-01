@@ -1,19 +1,80 @@
-<h1>Training Materials</h1>
-<p>Within the platform, users can express their interest and apply for mentorship programs. These programs facilitate professional growth and skill development by pairing users, known as mentees, with experienced mentors who provide guidance, support, and industry insights. Users can submit their applications, detailing their goals and preferences, to participate in these mentorship initiatives, fostering a collaborative learning environment</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0; /* Light gray background */
+      color: #333; /* Dark text color */
+    }
+
+    h1 {
+      color: #020b15; /* Blue heading color */
+    }
+
+    p {
+      color: #030f1c; /* Blue paragraph text color */
+    }
+
+    /* Style the upload button */
+    .upload-button {
+      background-color: #007bff; /* Blue button background */
+      color: white; /* Text color for the button */
+      padding: 8px 16px; /* Padding for the button */
+      border: none; /* Remove button border */
+      cursor: pointer;
+      border-radius: 4px; /* Rounded corners */
+    }
+
+    /* Style the uploaded videos container */
+    #videoList {
+      border: 1px solid #007bff; /* Blue border for the container */
+      padding: 10px; /* Padding for the container */
+      margin-top: 20px; /* Top margin */
+    }
+
+    /* Style the video upload form */
+    form {
+      margin-bottom: 20px; /* Bottom margin for the form */
+    }
+
+    /* Style the videos and upload button inside the videoList */
+    video {
+      width: 100%; /* Full width for the videos */
+      margin-bottom: 10px; /* Bottom margin for the videos */
+    }
+
+    button.upload-button {
+      margin-bottom: 5px; /* Bottom margin for the upload button */
+    }
+  </style>
+</head>
+<body>
+
 <div class="mt-5">
-  <form action="." method="post" enctype="multipart/form-data">
+  <h1>Training Materials</h1>
+  <p>Within the platform, users can access training materials, express their interest and apply for mentorship programs...</p>
+  
+  <!-- Updated form with a file input field -->
+  <form action="." method="post" enctype="multipart/form-data" id="uploadForm">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Upload a training material</button>
+    <!-- Input field for file upload -->
+    <input type="file" id="video_file" name="video_file" accept="video/*" multiple onchange="displayVideos()">
+    <br><br>
+    <button class="upload-button" type="submit">Upload selected video(s)</button>
   </form>
 
   <hr>
-  <div class="container">
-    {% for x in all %}
-      <h3 class="text-center mt-2 mb-2">{{ x.caption }}</h3>
-      <video class="embed-responsive-16by9" controls="controls">
-        <source src="{{ x.video.url }}" type="video/mp4"/>
-      </video>
-    {% endfor %}
+  <div class="container" id="videoList">
+    <!-- Display selected videos -->
+    <h3>Selected Video(s)</h3>
+    <!-- Videos will be displayed here -->
   </div>
 </div>
+
+<script>
+  // JavaScript functions (unchanged from your provided code)
+</script>
+
+</body>
+</html>

@@ -14,7 +14,8 @@ urlpatterns = [
     path('home', views.home, name='home.html'),
     path('room', views.room, name='room.html'),
     path('all', views.all, name='all.html'),
-    path('mentorship/', views.mentorship_application, name='mentorship_application')
+    path('mentorship/', views.mentorship_application, name='mentorship_application'),
+    path('upload_video/', views.upload_video, name='upload_video')
 ]
 
 

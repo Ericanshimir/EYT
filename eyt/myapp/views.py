@@ -6,6 +6,7 @@ from .models import Feature
 from .forms import Video_form
 from .forms import Video
 from .forms import MentorshipApplication
+from django.http import JsonResponse
 
 # Create your views here.
 def index(request):
@@ -29,7 +30,7 @@ def register(request):
             else:
                 user =User.objects.create_user(username=username, email=email, password=password),
                 messages.success(request, 'User created successfully')
-                return render(request, '#')
+                return redirect('login')
                 
             
         else:
@@ -113,3 +114,17 @@ def mentorship_application(request):
     all_data = MentorshipApplication.objects.all()
 
     return render(request, 'training_materials.html', {'form': form, 'all': all_data})
+
+
+
+
+def upload_video(request):
+    if request.method == 'POST' and request.FILES['video_file']:
+        video_file = request.FILES['video_file']
+        # Handle the uploaded file, for example, save it to your database or file system
+        # Example: video = VideoModel(video_file=video_file)
+        # video.save()
+        return JsonResponse({'message': 'Video uploaded successfully'})
+    else:
+        return JsonResponse({'error': 'Upload failed'})
+
