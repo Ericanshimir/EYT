@@ -26,6 +26,26 @@ bash
 Copy code
 # Ensure Python is installed
 # Then, install Django
+
+Install project dependencies:
+
+bash
+Copy code
+pip install -r requirements.txt
+Usage
+Run migrations:
+
+bash
+Copy code
+python manage.py makemigrations
+python manage.py migrate
+Start the development server:
+
+bash
+Copy code
+python manage.py runserver
+Access the application:
+Open a web browser and go to http://127.0.0.1:8000/ to view the site.
 pip install django
 Create a virtual environment (recommended):
 
