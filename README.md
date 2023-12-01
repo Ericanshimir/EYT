@@ -14,21 +14,18 @@ Some javascript
 Installation
 Clone the repository:
 
-bash
-Copy code
+
 git clone https://github.com/Ericanshimir/EYT.git
 cd eyt
 Install Python and Django:
 
-bash
-Copy code
+
 # Ensure Python is installed
 # Then, install Django
 pip install django
 Create a virtual environment:
 
-bash
-Copy code
+
 # Create a virtual environment
 python -m venv myenv
 
@@ -37,20 +34,17 @@ source myenv/bin/activate   # For Unix or MacOS
 myenv\Scripts\activate       # For Windows
 Install project dependencies:
 
-bash
-Copy code
+
 pip install -r requirements.txt
 Usage
 Run migrations:
 
-bash
-Copy code
+
 python manage.py makemigrations
 python manage.py migrate
 Start the development server:
 
-bash
-Copy code
+
 python manage.py runserver
 Access the application:
 Open a web browser and go to http://127.0.0.1:8000/ to view the site.
