@@ -7,6 +7,7 @@ from .forms import Video_form
 from .forms import Video
 from .forms import MentorshipApplication
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def index(request):
@@ -81,7 +82,7 @@ def training_materials(request):
     return render(request, 'training_materials.html' )
 
 def contact(request):
-    return render(request, 'contact_form.html')
+    return render(request, 'index.html')
 
 def home(request):
     return render(request, 'home.html')
@@ -127,4 +128,16 @@ def upload_video(request):
         return JsonResponse({'message': 'Video uploaded successfully'})
     else:
         return JsonResponse({'error': 'Upload failed'})
+
+def index(request):
+    return render(request, 'index.html')
+def send_info(request):
+    if request.method == 'POST':
+        info = request.POST.get('info')
+        # Here, you can process the received information as needed
+        # For demonstration purposes, we'll simply send it back as a response
+        return JsonResponse({'info': info})
+    return JsonResponse({'error': 'Invalid request'})
+
+    
 
