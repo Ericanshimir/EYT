@@ -5,6 +5,7 @@ from django.contrib import messages
 from .models import Feature
 from .forms import Video_form
 from .forms import Video
+from .forms import MentorshipApplication
 
 # Create your views here.
 def index(request):
@@ -27,8 +28,9 @@ def register(request):
                 return redirect('register')
             else:
                 user =User.objects.create_user(username=username, email=email, password=password),
-                user.save();
-                return redirect('Login')
+                messages.success(request, 'User created successfully')
+                return render(request, '#')
+                
             
         else:
             messages.info(request, 'password is not the same')
@@ -85,7 +87,8 @@ def home(request):
 
 def room(request):
     return room(request, 'room.html')
-def index(request):
+
+def all(request):
     if request.method == "POST":
         all_video=Video.objects.all()
         form=Video_form(data=request.POST, files=request.FILES)
@@ -94,5 +97,19 @@ def index(request):
             return HttpResponse("<h1>uploaded successfully")
     else:
         form=Video_form()
-    return render(request,'index.html',{"form":form,"all":all_video})
-    
+    return render(request,'all.html',{"form":form,"all":all_video})
+
+def mentorship_application(request):
+    if request.method == 'POST':
+        form = MentorshipApplication(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('success_url')
+            # Optionally, do something after saving the form
+    else:
+        form = MentorshipApplication()
+
+    # Fetch 'all' data from your model, replace YourModel with your actual model
+    all_data = MentorshipApplication.objects.all()
+
+    return render(request, 'training_materials.html', {'form': form, 'all': all_data})

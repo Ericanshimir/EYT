@@ -1,16 +1,19 @@
 <h1>Training Materials</h1>
-<div class="mt-5"
-<form action="." method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{form.as_p}}
-  <button class="'btn btn-success btn-lg"> Upload</button>
-</form>
-<hr>
-<div class="container">
-{% for x in video %}
-<h3 class=""text-center mt-2 mb-2>{{x.caption}}</h3>
-<video class="embed-responsive-16by9" controls="controls">
-<source src="{{x.video.url}}" type="video/mp4"/>
-</video>
-{% endfor %}
+<p>Within the platform, users can express their interest and apply for mentorship programs. These programs facilitate professional growth and skill development by pairing users, known as mentees, with experienced mentors who provide guidance, support, and industry insights. Users can submit their applications, detailing their goals and preferences, to participate in these mentorship initiatives, fostering a collaborative learning environment</p>
+<div class="mt-5">
+  <form action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload a training material</button>
+  </form>
+
+  <hr>
+  <div class="container">
+    {% for x in all %}
+      <h3 class="text-center mt-2 mb-2">{{ x.caption }}</h3>
+      <video class="embed-responsive-16by9" controls="controls">
+        <source src="{{ x.video.url }}" type="video/mp4"/>
+      </video>
+    {% endfor %}
+  </div>
 </div>

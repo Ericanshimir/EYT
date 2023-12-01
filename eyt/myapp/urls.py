@@ -12,8 +12,10 @@ urlpatterns = [
     path('training_materials', views.training_materials, name='training_materials'),
     path('contact', views.contact, name='contact.html'),
     path('home', views.home, name='home.html'),
-    path('room', views.room, name='room.html')
-
+    path('room', views.room, name='room.html'),
+    path('all', views.all, name='all.html'),
+    path('mentorship/', views.mentorship_application, name='mentorship_application')
 ]
+
 
     
