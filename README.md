@@ -16,7 +16,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone <repository_url>
+git clone https://github.com/Ericanshimir/EYT.git
 cd eyt
 Install Python and Django:
 
@@ -25,7 +25,7 @@ Copy code
 # Ensure Python is installed
 # Then, install Django
 pip install django
-Create a virtual environment (recommended):
+Create a virtual environment:
 
 bash
 Copy code
