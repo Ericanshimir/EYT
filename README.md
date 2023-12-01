@@ -43,6 +43,7 @@ python manage.py makemigrations
 python manage.py migrate
 
 Start the development server:
+
 python manage.py runserver
 
 Access the application:
