@@ -143,6 +143,7 @@ setInterval(function(){
 <script type="text/javascript">
   $(document).on('submit','#post-form',function(e){
     e.preventDefault();
+console.log("Form submitted!");
 
     $.ajax({
       type:'POST',

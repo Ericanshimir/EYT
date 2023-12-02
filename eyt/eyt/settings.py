@@ -29,7 +29,7 @@ DEBUG = True
 #APPEND_SLASH = False
 
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = []
 
 
 # Application definition
