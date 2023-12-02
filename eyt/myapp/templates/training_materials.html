@@ -4,48 +4,44 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0; /* Light gray background */
-      color: #333; /* Dark text color */
+      background-color: #f0f0f0; 
+      color: #333; 
     }
 
     h1 {
-      color: #020b15; /* Blue heading color */
+      color: #020b15; 
     }
 
     p {
-      color: #030f1c; /* Blue paragraph text color */
+      color: #030f1c; 
     }
 
-    /* Style the upload button */
     .upload-button {
-      background-color: #007bff; /* Blue button background */
-      color: white; /* Text color for the button */
-      padding: 8px 16px; /* Padding for the button */
-      border: none; /* Remove button border */
+      background-color: #007bff; 
+      color: white;
+      padding: 8px 16px; 
+      border: none; 
       cursor: pointer;
-      border-radius: 4px; /* Rounded corners */
+      border-radius: 4px; 
     }
 
-    /* Style the uploaded videos container */
     #videoList {
-      border: 1px solid #007bff; /* Blue border for the container */
-      padding: 10px; /* Padding for the container */
-      margin-top: 20px; /* Top margin */
+      border: 1px solid #007bff; 
+      padding: 10px; 
+      margin-top: 20px; 
     }
 
-    /* Style the video upload form */
     form {
-      margin-bottom: 20px; /* Bottom margin for the form */
+      margin-bottom: 20px; 
     }
 
-    /* Style the videos and upload button inside the videoList */
     video {
-      width: 100%; /* Full width for the videos */
-      margin-bottom: 10px; /* Bottom margin for the videos */
+      width: 100%; 
+      margin-bottom: 10px;
     }
 
     button.upload-button {
-      margin-bottom: 5px; /* Bottom margin for the upload button */
+      margin-bottom: 5px; 
     }
   </style>
 </head>
@@ -54,11 +50,10 @@
 <div class="mt-5">
   <h1>Training Materials</h1>
   <p>Within the platform, users can access training materials, express their interest and apply for mentorship programs...</p>
-  
-  <!-- Updated form with a file input field -->
+ 
   <form action="." method="post" enctype="multipart/form-data" id="uploadForm">
     {% csrf_token %}
-    <!-- Input field for file upload -->
+    
     <input type="file" id="video_file" name="video_file" accept="video/*" multiple onchange="displayVideos()">
     <br><br>
     <button class="upload-button" type="submit">Upload selected video(s)</button>
@@ -66,9 +61,9 @@
 
   <hr>
   <div class="container" id="videoList">
-    <!-- Display selected videos -->
+   
     <h3>Selected Video(s)</h3>
-    <!-- Videos will be displayed here -->
+   
   </div>
 </div>
 
