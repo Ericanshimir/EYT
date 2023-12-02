@@ -4,12 +4,12 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Feature
 from .forms import Video_form
-from .forms import Video
+from .forms import VideoModel
 from .forms import MentorshipApplication
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-# Create your views here.
+
 def index(request):
     features = Feature.objects.all()
     return  render(request, 'index.html', {'features': features})
@@ -90,16 +90,7 @@ def home(request):
 def room(request):
     return room(request, 'room.html')
 
-def all(request):
-    if request.method == "POST":
-        all_video=Video.objects.all()
-        form=Video_form(data=request.POST, files=request.FILES)
-        if form.is_valid():
-            form.save()
-            return HttpResponse("<h1>uploaded successfully")
-    else:
-        form=Video_form()
-    return render(request,'all.html',{"form":form,"all":all_video})
+
 
 def mentorship_application(request):
     if request.method == 'POST':
@@ -107,11 +98,11 @@ def mentorship_application(request):
         if form.is_valid():
             form.save()
             return redirect('success_url')
-            # Optionally, do something after saving the form
+            
     else:
         form = MentorshipApplication()
 
-    # Fetch 'all' data from your model, replace YourModel with your actual model
+    
     all_data = MentorshipApplication.objects.all()
 
     return render(request, 'training_materials.html', {'form': form, 'all': all_data})
@@ -122,9 +113,8 @@ def mentorship_application(request):
 def upload_video(request):
     if request.method == 'POST' and request.FILES['video_file']:
         video_file = request.FILES['video_file']
-        # Handle the uploaded file, for example, save it to your database or file system
-        # Example: video = VideoModel(video_file=video_file)
-        # video.save()
+        video = VideoModel(video_file=video_file)
+        #video.save()
         return JsonResponse({'message': 'Video uploaded successfully'})
     else:
         return JsonResponse({'error': 'Upload failed'})
@@ -134,8 +124,7 @@ def index(request):
 def send_info(request):
     if request.method == 'POST':
         info = request.POST.get('info')
-        # Here, you can process the received information as needed
-        # For demonstration purposes, we'll simply send it back as a response
+        
         return JsonResponse({'info': info})
     return JsonResponse({'error': 'Invalid request'})
 
